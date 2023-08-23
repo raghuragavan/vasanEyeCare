@@ -16,10 +16,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { SecondFormComponent } from './second-form/second-form.component';
+import { FormsComponent } from './forms/forms.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    SecondFormComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,

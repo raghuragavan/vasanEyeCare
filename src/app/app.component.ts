@@ -8,23 +8,15 @@ import { CustomerServiceService } from './customer-service.service';
 })
 export class AppComponent implements OnInit {
   title = 'VasanEyeCare';
-  drug1: any
-  drug2: any
-  constructor(private service: CustomerServiceService) {
+
+  constructor() {
 
   }
 
   ngOnInit(): void {
-    this.drugOne()
-    this.drugTwo()
+
   }
 
-  drugOne() {
-   this.drug1 =this.service.getDrungOne()
-  }
-  drugTwo() {
-    this.drug2 =this.service.getDrungTwo()
-   }
 }
 
 
