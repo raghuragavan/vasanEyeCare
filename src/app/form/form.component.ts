@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,16 +14,22 @@ export class FormComponent implements OnInit {
   form: any = FormGroup;
   formlist: any = []
   initialFormValues: any;
-  constructor(private fb: FormBuilder,) {
+  title: any
+  constructor(private fb: FormBuilder,private route:ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
     console.log("drugSchema", this.drugSchema)
     console.log("value***",this.schemaType)
+    this.route.queryParams.subscribe(data =>{
+      console.log("value",data)
+      this.title =data['value']
+    })
     if (this.drugSchema)
       this.form = this.createForm(this.drugSchema.fields);
     this.initialFormValues = this.form.value;
+    
     if (this.form.get('height'))
       this.form.get('height').valueChanges.subscribe(() => {
         this.calculateBMI();
